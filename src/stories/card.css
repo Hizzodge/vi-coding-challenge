@@ -9,13 +9,13 @@
   background-color: gainsboro;
 
   h2 {
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 0;
   }
 
   p {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
   }
 
   button {
@@ -28,12 +28,11 @@
   align-items: flex-start;
 
   h2 {
-    font-size: 36px;
-    margin-bottom: 25px;
+    font-size: 24px;
   }
 
   p {
-    font-size: 24px;
+    font-size: 16px;
   }
 
 }

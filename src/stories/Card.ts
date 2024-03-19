@@ -1,17 +1,18 @@
 import { html } from 'lit';
-import { Button} from './Button';
+import { Button, ButtonProps} from './Button';
 import './card.css';
 
 export interface CardProps {
   heading: string;
   text: string;
+  buttonProps?: ButtonProps;
 }
 
 
-export const Card = ({heading, text}: CardProps) => html`
+export const Card = ({heading, text, buttonProps}: CardProps) => html`
 <div class="card">
 <h2>${heading}</h2>
 <p>${text}</p>
-${Button({buttonShape: 'standard', label: 'Link button'})} 
+${buttonProps && Button(buttonProps)}
 </div>
 `;

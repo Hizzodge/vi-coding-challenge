@@ -23,6 +23,7 @@ export const CardStory: Story = {
   args: {
     heading: 'A wonderful serenity has taken possession',
     text: 'A wonderful serenity has taken possession of my entire soul, like these sweet mo',
+    buttonProps: { buttonShape: 'standard', label: 'Link button', onClick: () => console.log('button was clicked') }
   }
 };
 
