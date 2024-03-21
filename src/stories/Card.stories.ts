@@ -1,29 +1,32 @@
-import type { Meta, StoryObj } from '@storybook/web-components';
-import type { CardProps } from './Card';
-import { Card } from './Card';
+import { html } from 'lit';
+import { StoryFn } from '@storybook/web-components';
 
-
-
-const meta = {
-  title: 'Example/Card',
+export default {
+  title: 'Components/Card',
   tags: ['autodocs'],
-  render: (args: CardProps) => Card(args),
+  component: 'card-component',
   argTypes: {
-    heading: { type: 'string' },
-    text: { type: 'string' },
+    heading: { control: 'text' },
+    texts: { control: 'text' },
+    buttonLabel: { control: 'text' },
   },
-  args: {
-    }
-} satisfies Meta<CardProps>;
+};
 
-export default meta;
-type Story = StoryObj<CardProps>;
+const Template: StoryFn = (args) => html`
+  <card-component .heading=${args.heading} .texts=${args.texts} .buttonLabel=${args.buttonLabel}></card-component>
+`;
+// const Template = ({ heading, texts, buttonLabel }: { heading: string, texts: string, buttonLabel: string }) => html`
+//   <card-component
+//     heading=${heading}
+//     texts=${texts}
+//     buttonLabel=${buttonLabel}
+//   ></card-component>
+// `;
 
-export const CardStory: Story = {
-  args: {
-    heading: 'A wonderful serenity has taken possession',
-    text: 'A wonderful serenity has taken possession of my entire soul, like these sweet mo',
-    buttonProps: { buttonShape: 'standard', label: 'Link button', onClick: () => console.log('button was clicked') }
-  }
+export const Default = Template.bind({});
+Default.args = {
+  heading: 'A wonderful serenity has taken possession',
+  texts: 'A wonderful serenity has taken possession of my entire soul, like these sweet mo',
+  buttonLabel: 'Link button',
 };
 
