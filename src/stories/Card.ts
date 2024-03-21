@@ -21,23 +21,26 @@ export class Card extends LitElement {
   }
   static styles = css`
     .card {
+      width: fit-content;
+      height: 100%;
       font-family: 'Playfair Display', serif;
       color: #101d21;
       display: flex;
       flex-direction: column;
       text-align: center;
-      padding: 30px 24px;
       align-items: center;
       background-color: gainsboro;
+      padding: 20px;
   
       h2 {
         font-size: 20px;
-        margin-bottom: 0;
+        margin: 0;
       }
   
       p {
         font-family: 'Roboto Condensed', sans-serif;
         font-size: 14px;
+        margin-bottom: 40px
       }
   
       button {
@@ -54,7 +57,8 @@ export class Card extends LitElement {
         line-height: 14px;
         color: white;
         background-color: #101d21;
-        padding: 10px 20px
+        padding: 10px 20px;
+        border-radius: 10px;
       }
     
   
@@ -64,13 +68,22 @@ export class Card extends LitElement {
   
         h2 {
           font-size: 24px;
+          line-height: 30px;
         }
   
         p {
          font-size: 16px;
+         letter-spacing: -1px;
+        line-height: 18px;
+        }
+
+        button {
+          border-radius: 0;
         }
   
       }
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+       justify-content: center;
     }
   `;
 
